@@ -7,12 +7,10 @@ ENV PYTHONUNBUFFERED 1
 
 # install dependencies
 RUN python3 -m venv .env
-RUN ls -la
 RUN source .env/bin/activate
 RUN pip install --upgrade pip
 COPY ./requirements.txt /requirements.txt
 RUN pip install -r /requirements.txt
-RUN pip freeze
 
 # copy project
 RUN mkdir /app
